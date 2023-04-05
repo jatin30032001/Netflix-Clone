@@ -8,10 +8,9 @@ import {BrowserRouter as Router , Routes ,Route} from "react-router-dom"
 const App = () => {
   const user = true;
   return (
+    
     <Router>
-      
        <Routes>
-
          <Route exact path="/" element ={ user ? <Home/> :<Register/>}/>
          
          <Route exact path="/register" element ={!user ? <Register/> :<Home/>}/>
@@ -23,13 +22,9 @@ const App = () => {
             <Route exact path="/series" element ={<Home type="series"/>}/>
             <Route exact path="/watch" element ={<Watch/>}/>
           </>
-          
           )
          }
-
-       
        </Routes>
-    
     </Router>
 
 
