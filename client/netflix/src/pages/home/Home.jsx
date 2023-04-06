@@ -14,7 +14,11 @@ const [genre , setGenre] = useState(null);
 useEffect(()=>{
   const getRandomLists = async()=>{
      try{
-          const res = await axios.get(`lists${type ? "?type=" + type :""}${genre ? "&genre=" + genre :""}` )
+          const res = await axios.get(`lists${type ? "?type=" + type :""}${genre ? "&genre=" + genre :""}`,{
+            headers:{
+              token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmM4NmQxNzNhYWFhMzc3N2FkZGNlZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDc5MDM5NCwiZXhwIjoxNjgxMjIyMzk0fQ.sJ1qFmp8Q9TX_TW9s81m9Pe13WfFKIVHGAPL_k1Vl9I "
+            }
+          } )
           console.log(res.data);
           setLists(res.data);
      }

@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGO_URL, {
   app.use("/api/auth", authRoute);
   app.use("/api/users", userRoute);
   app.use("/api/movies",movieRoute);
-  app.use("api/lists" ,listRoute);
+  app.use("/api/lists" ,listRoute);
 
 
 app.listen("8800",()=>{
