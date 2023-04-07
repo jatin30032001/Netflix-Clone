@@ -19,7 +19,7 @@ useEffect(()=>{
               token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmM4NmQxNzNhYWFhMzc3N2FkZGNlZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDc5MDM5NCwiZXhwIjoxNjgxMjIyMzk0fQ.sJ1qFmp8Q9TX_TW9s81m9Pe13WfFKIVHGAPL_k1Vl9I "
             }
           } )
-          console.log(res.data);
+          // console.log(res.data)
           setLists(res.data);
      }
      catch(err){
@@ -35,10 +35,13 @@ useEffect(()=>{
     <div className="home">
        <Navbar/>
       <Featured type={type}/>
-       <List/>
-      <List/>
-      <List/>
-      <List/>  
+      {lists.map((list)=>{
+        return <List list={list}/>
+        
+      })}
+       
+
+     
     </div>
   );
 };
